@@ -1,0 +1,13 @@
+For the CSV:
+
+LABEL: column is to specify the kind of task: it could be a rating task, picture task. Especially with different tasks in one experiment this is useful. The PennWiki explains this, and PennController can see if you give a particular Label to the kind of task.
+
+GROUP: column is to create Latin-Square design. So you can do ABCD list, and then participant 1 gets to see the A list items only, and part. 2 gets to see the B list only. It's best, however, to create 4 different CSVs without a GROUP column.
+
+CLASS: This is where you give your "real" variable names. This column is not called into the experiment, but right before the closing parenthesis of the full PennController(experiment) you make sure that it is logged, as follows --> .log("Class", item.Class) 
+
+SENTENCE: in the template, it is used for the first part of the context sentence. The separate column is to make sure it is called in on a separate line from the rest of the context.
+
+CLAIM: Part two of the context, reasoning for column idem to SENTENCE. Called "claim" for reasons of set-up X says to Y. You can give the column a different header as long as you then appropriately call it into the experiment in the 'main.js' file. 
+
+QUESTION: The main question of the experiment. In this case naturalness of blue sentence. You could make this a different question for each and every item (which is what I did in my experiment). You simply do that by changing the question for each item/row. And then for each item the relevant question is called in. (there's all these things you can do, this is just a template after all).
